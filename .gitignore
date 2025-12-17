@@ -1,0 +1,11 @@
+# Fichiers Excel 
+*.xlsx 
+*.xls 
+# Python 
+__pycache__/ 
+*.pyc 
+# Dossiers 
+Resultats/ 
+Dashboard/ 
+# Backup 
+*_BACKUP/ 
