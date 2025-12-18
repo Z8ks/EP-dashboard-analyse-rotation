@@ -1,146 +1,80 @@
-# \# 📊 Dashboard Analyse Rotation - Retailer
+📊 Dashboard Analyse Rotation - Retailer
 
-# 
+Dashboard automatique d'analyse des ventes et du stock pour le Retailer.
 
-# Dashboard automatique d'analyse des ventes et du stock pour le Retailer.
+🎯 Fonctionnalités
 
-# 
+Analyse des ventes par produit : Identification des meilleures et pires ventes
 
-# \## 🎯 Fonctionnalités
+Rotation du stock : Calcul automatique du coefficient de rotation
 
-# 
+Visualisations graphiques : Graphiques automatiques intégrés dans Excel
 
-# \- \*\*Analyse des ventes par produit\*\* : Identification des meilleures et pires ventes
+Alertes automatiques : Produits en surstockage ou en rupture
 
-# \- \*\*Rotation du stock\*\* : Calcul automatique du coefficient de rotation
+Export professionnel : Dashboard Excel prêt à présenter
 
-# \- \*\*Visualisations graphiques\*\* : Graphiques automatiques intégrés dans Excel
+🚀 Installation
 
-# \- \*\*Alertes automatiques\*\* : Produits en surstockage ou en rupture
+Prérequis
 
-# \- \*\*Export professionnel\*\* : Dashboard Excel prêt à présenter
+Python 3.7+
 
-# 
+Excel 2016+ (Windows recommandé)
 
-# \## 🚀 Installation
+Dépendances
+pip install pandas openpyxl xlsxwriter
 
-# 
+📁 Structure des fichiers
 
-# \### Prérequis
-
-# \- Python 3.7+
-
-# \- Excel 2016+ (Windows recommandé)
-
-# 
-
-# \### Dépendances
-
-
-
-\## 📁 Structure des fichiers
-
-
-
-02\_Analyse\_Rotation/
-
-├── generer\_dashboard.py # Script principal
-
-├── LANCER\_DASHBOARD.bat # Lanceur rapide
-
-├── Ventes\_Stock\_Retailer.xlsx # Fichier de données (à créer)
-
+02_Analyse_Rotation/
+├── generer_dashboard.py # Script principal
+├── LANCER_DASHBOARD.bat # Lanceur rapide
+├── Ventes_Stock_Retailer.xlsx # Fichier de données (à créer)
 └── Dashboard/ # Dossiers de sortie (auto-créé)
 
+💻 Utilisation
 
+Méthode 1 : Double-clic (Recommandé)
 
-\## 💻 Utilisation
+Double-cliquez sur LANCER_DASHBOARD.bat
 
+Le dashboard s'ouvre automatiquement dans Excel
 
+Méthode 2 : Ligne de commande
+python generer_dashboard.py
 
-\### Méthode 1 : Double-clic (Recommandé)
+📊 Format du fichier source
 
-1\. Double-cliquez sur \*\*`LANCER\_DASHBOARD.bat`\*\*
+Le fichier Ventes_Stock_Retailer.xlsx doit contenir :
 
-2\. Le dashboard s'ouvre automatiquement dans Excel
+Colonne	Description	Type
+Code EAN	Code-barres produit	Texte
+Désignation	Nom du produit	Texte
+Quantité Vendue	Ventes période	Nombre
+Stock Actuel	Stock disponible	Nombre
+Prix de Vente	Prix unitaire	Nombre
+📈 Indicateurs calculés
 
+CA Total : Chiffre d'affaires par produit
 
+Taux de rotation : Vitesse d'écoulement du stock
 
-\### Méthode 2 : Ligne de commande
+Classement ventes : Top et Flop produits
 
+Alertes stock : Surstock / Rupture
 
+🔧 Personnalisation
 
+Modifiez les seuils dans generer_dashboard.py :
 
+SEUIL_SURSTOCK = 0.5 # Rotation < 50%
+SEUIL_RUPTURE = 2.0 # Rotation > 200%
 
-\## 📊 Format du fichier source
-
-
-
-Le fichier \*\*`Ventes\_Stock\_Retailer.xlsx`\*\* doit contenir :
-
-
-
-| Colonne | Description | Type |
-
-|---------|-------------|------|
-
-| `Code EAN` | Code-barres produit | Texte |
-
-| `Désignation` | Nom du produit | Texte |
-
-| `Quantité Vendue` | Ventes période | Nombre |
-
-| `Stock Actuel` | Stock disponible | Nombre |
-
-| `Prix de Vente` | Prix unitaire | Nombre |
-
-
-
-\## 📈 Indicateurs calculés
-
-
-
-\- \*\*CA Total\*\* : Chiffre d'affaires par produit
-
-\- \*\*Taux de rotation\*\* : Vitesse d'écoulement du stock
-
-\- \*\*Classement ventes\*\* : Top et Flop produits
-
-\- \*\*Alertes stock\*\* : Surstock / Rupture
-
-
-
-\## 🔧 Personnalisation
-
-
-
-Modifiez les seuils dans `generer\_dashboard.py` :
-
-
-
-Seuils d'alerte rotation
-
-SEUIL\_SURSTOCK = 0.5 # Rotation < 50%
-
-SEUIL\_RUPTURE = 2.0 # Rotation > 200%
-
-
-
-
-
-\## 📄 Licence
-
-
+📄 Licence
 
 Projet privé - Usage interne uniquement
 
+👤 Auteur
 
-
-\## 👤 Auteur
-
-
-
-\*\*Z8ks\*\* - Dashboard automatisé pour analyse commerciale
-
-
-
+Z8ks - Dashboard automatisé pour analyse commerciale
