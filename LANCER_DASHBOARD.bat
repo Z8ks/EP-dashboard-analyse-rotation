@@ -1,35 +1,28 @@
 @echo off
-chcp 65001 >nul
-title Dashboard Retailer - Lancement
-color 0A
-cls
+REM ===========================================
+REM  LANCEMENT DASHBOARD RETAILER (clé USB)
+REM  Structure respectée :
+REM  - F:\02_Analyse_Rotation\generer_dashboard.py
+REM  - F:\Data\
+REM  - F:\python\WPy64-31700\python\python.exe
+REM ===========================================
 
-echo.
-echo =================================================
-echo   DASHBOARD COMPLET RETAILER
-echo =================================================
-echo.
+REM Monter la clé actuelle sur F: (peu importe sa lettre réelle)
+subst F: "%~d0\"
 
-REM Aller dans le dossier du script
-cd /d "%~dp0"
+REM Se placer dans le dossier du script vu depuis F:
+cd /d "F:\02_Analyse_Rotation"
 
-set "PYTHON_EXE=F:\python\WPy64-31700\python\python.exe"
-
-echo Lancement du script...
+echo Dossier courant : %cd%
 echo.
 
-"%PYTHON_EXE%" generer_dashboard.py
-set "ERROR_CODE=%ERRORLEVEL%"
-
+echo Lancement de Python...
+"F:\python\WPy64-31700\python\python.exe" "generer_dashboard.py"
 echo.
-echo =================================================
-if "%ERROR_CODE%"=="0" (
-    echo  SUCCES! Dashboard genere
-    echo  Consultez le dossier: F:\02_Analyse_Rotation\Dashboard
-) else (
-    echo  ERREUR lors de l'execution
-    echo  Code erreur: %ERROR_CODE%
-)
-echo =================================================
+echo Code retour Python : %errorlevel%
+
 echo.
 pause
+
+REM (Optionnel) libérer la lettre F: après exécution
+REM subst F: /d
